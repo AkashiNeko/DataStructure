@@ -13,9 +13,31 @@ void SLinkListTest()
 {
 	pSL s = NULL;
 	SLPrint(s);
-	SLPushBack(&s, 1);
-	SLPushBack(&s, 2);
 
+	SLPushBack(&s, 1);
+	SLPrint(s);
+
+	SLPopBack(&s);
+	SLPrint(s);
+
+	SLPushFront(&s, 3);
+	SLPrint(s);
+
+	SLPushBack(&s, 4);
+	SLPrint(s);
+
+	SLPushFront(&s, 2);
+	SLPrint(s);
+
+	pSL found = SLFindNode(&s, 3);
+	if (found)
+		found->data = 5;
+	SLPrint(s);
+
+	SLPopFront(&s);
+	SLPrint(s);
+
+	SLDestroy(&s);
 	SLPrint(s);
 }
 

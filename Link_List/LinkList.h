@@ -6,18 +6,29 @@
 #include <stdlib.h>
 #include <assert.h>
 
-typedef int;
-
+//链表节点结构体
 typedef struct SLinkList
 {
 	int data;
 	struct SLinkList* next;
 }SLTNode, * pSL;
 
+//打印整个单向链表
 void SLPrint(pSL ps);
 
+//创建链表节点空间
 pSL SLCreateNode(int data);
 
+//头增、头删、尾增、尾删
 void SLPushBack(pSL* ppHead, int data);
+void SLPopBack(pSL* ppHead);
+void SLPushFront(pSL* ppHead, int data);
+void SLPopFront(pSL* ppHead);
+
+//寻找链表节点（不存在返回NULL）
+pSL SLFindNode(pSL* ppHead, int data);
+
+//销毁链表
+void SLDestroy(pSL* ppHead);
 
 #endif
