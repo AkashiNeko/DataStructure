@@ -21,7 +21,7 @@ void SLPrint(pSL ps)
 pSL SLCreateNode(int data)
 {
 	/*创建链表节点空间*/
-	pSL NewNode = (pSL)malloc(sizeof(SLTNode));
+	pSL NewNode = (pSL)malloc(sizeof(SL));
 	assert(NewNode);
 	NewNode->data = data;
 	NewNode->next = NULL;
@@ -126,16 +126,16 @@ void SLDestroy(pSL* ppHead)
 {
 	/*销毁链表*/
 	if (*ppHead == NULL) return;
-	pSL p = *ppHead;
-	pSL s = p->next;
-	free(p);
-	//指针p指向链表头节点，指针s为p的下一个节点
-	while (s)
+	pSL cur = *ppHead;
+	pSL nex = cur->next;
+	free(cur);
+	//指针cur指向链表头节点，指针nex为cur的下一个节点
+	while (nex)
 	{
-		//指针s向后遍历，指针p释放s之前的空间
-		p = s;
-		s = s->next;
-		free(p);
+		//指针nex向后遍历，指针cur释放空间
+		cur = nex;
+		nex = nex->next;
+		free(cur);
 	}
 	*ppHead = NULL;
 } // SLDestroy

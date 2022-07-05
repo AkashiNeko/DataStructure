@@ -1,4 +1,5 @@
 #pragma once
+
 #ifndef __LINKLIST_H__
 #define __LINKLIST_H__
 
@@ -11,7 +12,7 @@ typedef struct SLinkList
 {
 	int data;
 	struct SLinkList* next;
-}SLTNode, * pSL;
+}SL, * pSL;
 
 //打印整个单向链表
 void SLPrint(pSL ps);
