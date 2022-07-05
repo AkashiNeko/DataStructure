@@ -1,7 +1,7 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
 //    date:   2022-6-30
-//    author: Akashi (·ú·ú)
+//    author: Akashi
 //    github: https://github.com/AkashiNeko/DataStructure
 //    QQ:     1006554341
 //
