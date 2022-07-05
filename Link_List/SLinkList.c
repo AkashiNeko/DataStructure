@@ -99,6 +99,29 @@ pSL SLFindNode(pSL* ppHead, int data)
 	return NULL;
 } // SLFindNode
 
+void SLInsert(pSL* ppNode, int data)
+{
+	/*在指定位置之后插入节点*/
+	pSL NewNode = SLCreateNode(data);
+	if (*ppNode == NULL)
+	{
+		//如果链表节点为空指针
+		*ppNode = NewNode;
+		return;
+	}
+	NewNode->next = (*ppNode)->next;
+	(*ppNode)->next = NewNode;
+} // SLInsert
+
+void SLErase(pSL* ppNode)
+{
+	/*删除指定位置之后的节点*/
+	if (*ppNode == NULL || (*ppNode)->next == NULL) return;
+	pSL next = (*ppNode)->next->next;
+	free((*ppNode)->next);
+	(*ppNode)->next = next;
+} // SLErase
+
 void SLDestroy(pSL* ppHead)
 {
 	/*销毁链表*/
@@ -109,7 +132,7 @@ void SLDestroy(pSL* ppHead)
 	//指针p指向链表头节点，指针s为p的下一个节点
 	while (s)
 	{
-		//指针s向后遍历，指针p释放空间
+		//指针s向后遍历，指针p释放s之前的空间
 		p = s;
 		s = s->next;
 		free(p);

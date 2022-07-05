@@ -28,6 +28,12 @@ void SLPopFront(pSL* ppHead);
 //寻找链表节点（不存在返回NULL）
 pSL SLFindNode(pSL* ppHead, int data);
 
+//在指定位置之后插入节点
+void SLInsert(pSL* ppNode, int data);
+
+//删除指定位置之后的节点
+void SLErase(pSL* ppNode);
+
 //销毁链表
 void SLDestroy(pSL* ppHead);
 

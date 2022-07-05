@@ -29,12 +29,20 @@ void SLinkListTest()
 	SLPushFront(&s, 2);
 	SLPrint(s);
 
-	pSL found = SLFindNode(&s, 3);
-	if (found)
-		found->data = 5;
+	SLPopFront(&s);
 	SLPrint(s);
 
-	SLPopFront(&s);
+	pSL found = SLFindNode(&s, 3);
+	if (found)
+		SLInsert(&found, 5);
+	SLPrint(s);
+
+	SLErase(&s->next);
+	SLPrint(s);
+
+	int i = 100;
+	while (i--)
+		SLPushFront(&s, i);
 	SLPrint(s);
 
 	SLDestroy(&s);
