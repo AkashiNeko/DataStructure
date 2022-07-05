@@ -7,7 +7,7 @@
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
-#include "LinkList.h"
+#include "SinglyLinkList.h"
 
 void SLinkListTest1()
 {
