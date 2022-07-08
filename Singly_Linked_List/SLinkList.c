@@ -1,4 +1,4 @@
-#include "SinglyLinkList.h"
+#include "SLinkList.h"
 
 void SLPrint(pSL ps)
 {

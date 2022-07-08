@@ -24,7 +24,7 @@
     <ProjectGuid>{2ef50a03-bcac-42cb-8fd9-511fb25fbf67}</ProjectGuid>
     <RootNamespace>LInkList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Link_List</ProjectName>
+    <ProjectName>Singly_Linked_List</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,11 +140,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SinglyLinkList.c" />
+    <ClCompile Include="SLinkList.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SinglyLinkList.h" />
+    <ClInclude Include="SLinkList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
