@@ -18,7 +18,7 @@ void SLPrint(pSL ps)
 	printf("->NULL\n");
 } // SLPrint
 
-pSL SLCreateNode(int data)
+pSL SLCreateNode(DataType data)
 {
 	/*创建链表节点空间*/
 	pSL NewNode = (pSL)malloc(sizeof(SL));
@@ -28,9 +28,9 @@ pSL SLCreateNode(int data)
 	return NewNode;
 } // SLCreateNode
 
-void SLPushBack(pSL* ppHead, int data)
+void SLPushBack(pSL* ppHead, DataType data)
 {
-	/*尾增*/
+	/*尾插*/
 	pSL NewNode = SLCreateNode(data);
 	if (*ppHead == NULL)
 	{
@@ -68,9 +68,9 @@ void SLPopBack(pSL* ppHead)
 	p->next = NULL;
 } // SLPopBack
 
-void SLPushFront(pSL* ppHead, int data)
+void SLPushFront(pSL* ppHead, DataType data)
 {
-	/*头增*/
+	/*头插*/
 	pSL NewNode = SLCreateNode(data); 
 	NewNode->next = *ppHead;
 	*ppHead = NewNode;
@@ -85,7 +85,7 @@ void SLPopFront(pSL* ppHead)
 	free(p);
 } // SLPopFront
 
-pSL SLFindNode(pSL* ppHead, int data)
+pSL SLFindNode(pSL* ppHead, DataType data)
 {
 	/*查找链表中节点*/
 	if (*ppHead == NULL) return NULL;
@@ -99,59 +99,59 @@ pSL SLFindNode(pSL* ppHead, int data)
 	return NULL;
 } // SLFindNode
 
-void SLInsert(pSL* ppHead, pSL pNode, int data)
+void SLInsert(pSL* ppHead, pSL pos, DataType data)
 {
-	/*在指定位置插入节点*/
+	/*在pos位置插入节点*/
 	pSL NewNode = SLCreateNode(data);
-	if (pNode == *ppHead)
+	if (pos == *ppHead)
 	{
 		NewNode->next = *ppHead;
 		*ppHead = NewNode;
 		return;
 	}
 	pSL cur = *ppHead;
-	//遍历链表寻找到pNode的前一个节点
-	while (cur->next != pNode)
+	//遍历链表寻找到pos的前一个节点
+	while (cur->next != pos)
 	{
 		cur = cur->next;
-		//链表中不存在pNode则报错
+		//链表中不存在pos则报错
 		assert(cur);
 	}
 	cur->next = NewNode;
-	NewNode->next = pNode;
+	NewNode->next = pos;
 } // SLInsert
 
-void SLErase(pSL* ppHead, pSL pNode)
+void SLErase(pSL* ppHead, pSL pos)
 {
-	/*在指定位置删除节点*/
+	/*在pos位置删除节点*/
 	if (*ppHead == NULL) return;
 	pSL cur = *ppHead;
-	while (cur->next != pNode)
+	while (cur->next != pos)
 	{
 		cur = cur->next;
-		//链表中不存在pNode则报错
+		//链表中不存在pos则报错
 		assert(cur);
 	}
-	cur->next = pNode->next;
-	free(pNode);
+	cur->next = pos->next;
+	free(pos);
 } // SLErase
 
-void SLInsertAfter(pSL pNode, int data)
+void SLInsertAfter(pSL pos, DataType data)
 {
-	/*在指定位置之后插入节点*/
+	/*在pos位置之后插入节点*/
 	pSL NewNode = SLCreateNode(data);
-	assert(pNode);
-	NewNode->next = pNode->next;
-	pNode->next = NewNode;
+	assert(pos);
+	NewNode->next = pos->next;
+	pos->next = NewNode;
 } // SLInsert
 
-void SLEraseAfter(pSL pNode)
+void SLEraseAfter(pSL pos)
 {
-	/*删除指定位置之后的节点*/
-	if (pNode == NULL || pNode->next == NULL) return;
-	pSL next = pNode->next->next;
-	free(pNode->next);
-	pNode->next = next;
+	/*删除pos位置之后的节点*/
+	if (pos == NULL || pos->next == NULL) return;
+	pSL next = pos->next->next;
+	free(pos->next);
+	pos->next = next;
 } // SLErase
 
 void SLReverse(pSL* ppHead)

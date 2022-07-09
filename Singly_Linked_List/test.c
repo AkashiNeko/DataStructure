@@ -14,7 +14,7 @@ void SLinkListTest1()
 	pSL s = NULL;
 	
 	SLPrint(s);
-	//尾增
+	//尾插
 	SLPushBack(&s, 1);
 	SLPrint(s);
 	//尾删
@@ -23,7 +23,7 @@ void SLinkListTest1()
 
 	int i = 10;
 	while (i--)
-		//头增
+		//头插
 		SLPushFront(&s, i);
 	SLPrint(s);
 	//头删
@@ -82,7 +82,7 @@ void SLinkListTest2()
 
 int main()
 {
-	//SLinkListTest1();
-	//SLinkListTest2();
+	SLinkListTest1();
+	SLinkListTest2();
 	return 0;
 }
