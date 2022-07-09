@@ -126,7 +126,7 @@ void DLErase(pDL pos)
 	posNext->prev = posPrev;
 } // DLErase
 
-void DLClean(pDL phead)
+void DLDestroy(pDL phead)
 {
 	/*Çå¿ÕÁ´±í*/
 	assert(phead);

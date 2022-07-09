@@ -55,7 +55,7 @@ void DLinkListTest2()
 	DLErase(head->next);
 	DLPrint(head);
 
-	DLClean(head);
+	DLDestroy(head);
 	DLPrint(head);
 }
 

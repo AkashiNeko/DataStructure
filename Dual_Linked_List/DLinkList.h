@@ -43,6 +43,6 @@ void DLInsert(pDL pos, DataType data);
 void DLErase(pDL pos);
 
 //Çå¿ÕÁ´±í
-void DLClean(pDL phead);
+void DLDestroy(pDL phead);
 
 #endif
