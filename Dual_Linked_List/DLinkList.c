@@ -128,7 +128,7 @@ void DLErase(pDL pos)
 
 void DLDestroy(pDL phead)
 {
-	/*清空链表*/
+	/*销毁链表*/
 	assert(phead);
 	pDL cur = phead;
 	pDL nex = phead->next;

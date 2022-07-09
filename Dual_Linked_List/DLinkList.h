@@ -42,7 +42,7 @@ void DLInsert(pDL pos, DataType data);
 //删除pos位置的节点
 void DLErase(pDL pos);
 
-//清空链表
+//销毁链表
 void DLDestroy(pDL phead);
 
 #endif
