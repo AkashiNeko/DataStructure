@@ -17,13 +17,25 @@ typedef struct Stact
 	int capacity;
 }ST, * pST;
 
+//初始化栈
 void STInit(pST ps);
-void STDestroy(pST ps);
-void STPush(pST ps, DataType data);
-void STPop(pST ps);
-DataType STTop(pST ps);
-int STEmpty(pST ps);
-int STSize(pST ps);
 
+//销毁栈
+void STDestroy(pST ps);
+
+//压栈
+void STPush(pST ps, DataType data);
+
+//出栈
+void STPop(pST ps);
+
+//取栈顶元素
+DataType STTop(pST ps);
+
+//判断是否为空
+int STEmpty(pST ps);
+
+//栈的大小
+int STSize(pST ps);
 
 #endif

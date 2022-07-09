@@ -6,7 +6,9 @@ void STInit(pST ps)
 	assert(ps);
 	ps->data = NULL;
 	ps->top = 0;
-	ps->capacity = 0;
+	ps->capacity = 4;
+	ps->data = (DataType*)malloc(ps->capacity * sizeof(DataType));
+	assert(ps->data);
 } // STInit
 
 void STDestroy(pST ps)
@@ -18,23 +20,49 @@ void STDestroy(pST ps)
 	ps->top = 0;
 	ps->capacity = 0;
 } // STDestroy
+
 void STPush(pST ps, DataType data)
 {
+	/*Ñ¹Õ»£¨ÈëÕ»£©*/
+	assert(ps);
+	if (ps->top + 1 == ps->capacity)
+	{
+		//À©ÈÝ
+		ps->capacity *= 2;
+		DataType* temp = NULL;
+		temp = (DataType*)realloc(ps->data, ps->capacity * sizeof(DataType));
+		assert(temp);
+		ps->data = temp;
+	}
+	ps->data[ps->top++] = data;
+} // STPush
 
-}
 void STPop(pST ps)
 {
+	/*³öÕ»*/
+	assert(ps);
+	if (ps->top)
+		--ps->top;
+} // STPop
 
-}
 DataType STTop(pST ps)
 {
+	/*È¡Õ»¶¥ÔªËØ*/
+	assert(ps);
+	assert(ps->top);
+	return ps->data[ps->top - 1];
+} // STTop
 
-}
 int STEmpty(pST ps)
 {
+	/*ÅÐ¶ÏÊÇ·ñÎª¿Õ*/
+	assert(ps);
+	return !ps->top;
+} // STEmpty
 
-}
 int STSize(pST ps)
 {
-
-}
+	/*Õ»µÄ´óÐ¡*/
+	assert(ps);
+	return ps->top;
+} // STSize
