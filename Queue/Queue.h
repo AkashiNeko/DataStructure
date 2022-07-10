@@ -7,41 +7,40 @@
 #include <assert.h>
 
 //队列中元素的数据类型
-typedef int QDataType;
+typedef int DataType;
 
 //队列的链式结构
 typedef struct QueueNode
 {
 	struct QueueNode* next;
-	QDataType data;
-}QNode;
+	DataType data;
+}QNode, * pQNode;
 
 //队列的结构
 typedef struct Queue
 {
-	//int size;
-	QNode* head;
-	QNode* tail;
+	pQNode front;
+	pQNode rear;
 }Queue, * pQ;
 
 //初始化队列
-void QueueInit(pQ pq);
+void QInit(pQ pq);
 
 //销毁队列
-void QueueDestroy(pQ pq);
+void QDestroy(pQ pq);
 
 //入队、出队
-void QueuePush(pQ pq, QDataType x);
-void QueuePop(pQ pq);
+void QPush(pQ pq, DataType data);
+void QPop(pQ pq);
 
 //取队头、队尾元素
-QDataType QueueFront(pQ pq);
-QDataType QueueBack(pQ pq);
+DataType QFront(pQ pq);
+DataType QRear(pQ pq);
 
 //判断队列是否为空
-int QueueEmpty(pQ pq);
+int QEmpty(pQ pq);
 
 //取队列中元素个数
-int QueueSize(pQ pq);
+int QSize(pQ pq);
 
 #endif
