@@ -9,7 +9,7 @@
 
 #include "LinkQueue.h"
 
-void LQueueTest()
+void LinkQueueTest()
 {
 	LQ q;
 	LQInit(&q);
@@ -47,6 +47,6 @@ void LQueueTest()
 
 int main()
 {
-	LQueueTest();
+	LinkQueueTest();
 	return 0;
 }

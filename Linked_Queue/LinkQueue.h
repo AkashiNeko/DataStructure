@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __QUEUE_H__
-#define __QUEUE_H__
+#ifndef __LQUEUE_H__
+#define __LQUEUE_H__
 
 #include <stdio.h>
 #include <stdlib.h>
