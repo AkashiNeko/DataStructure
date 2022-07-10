@@ -1,14 +1,14 @@
-#include "Queue.h"
+#include "LinkQueue.h"
 
-void QInit(pQ pq)
+void LQInit(pLQ pq)
 {
 	/*初始化队列*/
 	assert(pq);
 	pq->front = NULL;
 	pq->rear = NULL;
-} // QInit
+} // LQInit
 
-void QDestroy(pQ pq)
+void LQDestroy(pLQ pq)
 {
 	/*销毁队列*/
 	assert(pq);
@@ -24,9 +24,9 @@ void QDestroy(pQ pq)
 	}
 	pq->front = NULL;
 	pq->rear = NULL;
-} // QDestroy
+} // LQDestroy
 
-void QPush(pQ pq, DataType data)
+void LQPush(pLQ pq, DataType data)
 {
 	/*入队*/
 	assert(pq);
@@ -46,9 +46,9 @@ void QPush(pQ pq, DataType data)
 	}
 	pq->rear->next = NULL;
 	pq->rear->data = data;
-} // QPush
+} // LQPush
 
-void QPop(pQ pq)
+void LQPop(pLQ pq)
 {
 	/*出队*/
 	assert(pq);
@@ -61,32 +61,32 @@ void QPop(pQ pq)
 		//出队后队列为空
 		pq->rear = NULL;
 	}
-} // QPop
+} // LQPop
 
-DataType QFront(pQ pq)
+DataType LQFront(pLQ pq)
 {
 	/*取队头元素*/
 	assert(pq);
 	assert(pq->front);
 	return pq->front->data;
-} // QFront
+} // LQFront
 
-DataType QRear(pQ pq)
+DataType LQRear(pLQ pq)
 {
 	/*取队尾元素*/
 	assert(pq);
 	assert(pq->rear);
 	return pq->rear->data;
-} // QRear
+} // LQRear
 
-int QEmpty(pQ pq)
+int LQEmpty(pLQ pq)
 {
 	/*判断队列是否为空*/
 	assert(pq);
 	return !pq->front;
-} // QEmpty
+} // LQEmpty
 
-int QSize(pQ pq)
+int LQSize(pLQ pq)
 {
 	/*取队列中元素个数*/
 	assert(pq);
@@ -98,4 +98,4 @@ int QSize(pQ pq)
 		count++;
 	}
 	return count;
-} // QSize
+} // LQSize

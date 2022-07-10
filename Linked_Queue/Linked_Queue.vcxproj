@@ -24,6 +24,7 @@
     <ProjectGuid>{bbad4a9e-f36e-455f-a669-d5666141e86c}</ProjectGuid>
     <RootNamespace>Queue</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Linked_Queue</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,8 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Queue.c" />
-    <ClCompile Include="Queue.h" />
+    <ClCompile Include="LinkQueue.c" />
+    <ClCompile Include="LinkQueue.h" />
     <ClCompile Include="test.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
