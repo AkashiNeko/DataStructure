@@ -55,14 +55,14 @@ DataType STTop(pST ps)
 
 int STEmpty(pST ps)
 {
-	/*判断是否为空*/
+	/*判断栈是否为空*/
 	assert(ps);
 	return !ps->top;
 } // STEmpty
 
 int STSize(pST ps)
 {
-	/*栈的大小*/
+	/*取栈中元素个数*/
 	assert(ps);
 	return ps->top;
 } // STSize

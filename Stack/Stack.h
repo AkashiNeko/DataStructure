@@ -32,10 +32,10 @@ void STPop(pST ps);
 //取栈顶元素
 DataType STTop(pST ps);
 
-//判断是否为空
+//判断栈是否为空
 int STEmpty(pST ps);
 
-//栈的大小
+//取栈中元素个数
 int STSize(pST ps);
 
 #endif
