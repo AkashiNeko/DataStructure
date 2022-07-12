@@ -11,6 +11,12 @@
 //1:最大堆（大根堆）
 #define _MAX_HEAP 0
 
+#if _MAX_HEAP
+#define _CMP_ >
+#else
+#define _CMP_ <
+#endif // 大小堆
+
 //堆中元素的数据类型
 typedef int DataType;
 
@@ -26,7 +32,7 @@ typedef struct Heap
 void Swap(DataType* p1, DataType* p2);
 
 //向下/向上调整
-void AdjustDwon(DataType* data, int size, int parent);
+void AdjustDown(DataType* data, int size, int parent);
 void AdjustUp(DataType* data, int child);
 
 //打印堆
@@ -52,5 +58,8 @@ int HPEmpty(HP* php);
 
 //堆中元素个数
 int HPSize(HP* php);
+
+//堆排序
+void HeapSort(DataType* data, int size);
 
 #endif

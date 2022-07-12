@@ -1,11 +1,5 @@
 #include "Heap.h"
 
-#if _MAX_HEAP
-#define _CMP_ >
-#else
-#define _CMP_ <
-#endif
-
 void Swap(DataType* p1, DataType* p2)
 {
 	/*交换数据*/
@@ -14,7 +8,7 @@ void Swap(DataType* p1, DataType* p2)
 	*p2 = temp;
 } // Swap
 
-void AdjustDwon(DataType* data, int size, int parent)
+void AdjustDown(DataType* data, int size, int parent)
 {
 	/*向下调整*/
 	int child = parent * 2 + 1;
@@ -37,7 +31,7 @@ void AdjustDwon(DataType* data, int size, int parent)
 			break;
 		}
 	}
-} // AdjustDwon
+} // AdjustDown
 
 void AdjustUp(DataType* data, int child)
 {
@@ -143,11 +137,11 @@ DataType HPPop(HP* php)
 	assert(php->size > 0);
 	DataType ret = php->data[0];
 	--php->size;
-	if (php->size == 1) return ret;
-	//交换根节点和最后一个节点
-	Swap(&php->data[php->size], &php->data[0]);
+	if (php->size == 0) return ret;
+	//最后一个节点移动到根节点
+	php->data[0] = php->data[php->size];
 	//向下调整
-	AdjustDwon(php->data, php->size, 0);
+	AdjustDown(php->data, php->size, 0);
 	return ret;
 } // HPPop
 
@@ -173,4 +167,18 @@ int HPSize(HP* php)
 	return php->size;
 } // HPSize
 
-#undef _CMP_
+void HeapSort(DataType* data, int size)
+{
+	/*堆排序*/
+	assert(data);
+	int i;
+	for (i = (size - 2) / 2; i >= 0; --i)
+	{
+		AdjustDown(data, size, i);
+	}
+	while (size--)
+	{
+		Swap(data, data + size);
+		AdjustDown(data, size, 0);
+	}
+} // HeapSort

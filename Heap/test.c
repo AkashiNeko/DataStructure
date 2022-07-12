@@ -9,12 +9,12 @@
 
 #include "Heap.h"
 
-void HeapTest()
+void HeapTest1()
 {
 	HP hp;
 	HPInit(&hp);
 	srand(114514);
-	for (int i = 0; i < 7; ++i)
+	for (int i = 0; i < 15; ++i)
 	{
 		HPPush(&hp, rand() % 90 + 10);
 		HPPrint(&hp);
@@ -29,9 +29,29 @@ void HeapTest()
 	}
 }
 
+void HeapTest2()
+{
+	srand(1919810);
+	int arr[20];
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (int i = 0; i < sz; ++i)
+	{
+		arr[i] = rand() % 100;
+		printf("%d ", arr[i]);
+	}
+	//ÅÅÐò
+	HeapSort(arr, sz);
+	printf("\n");
+	for (int i = 0; i < sz; ++i)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
 int main()
 {
 	int i = 0;
-	HeapTest();
+	//HeapTest1();
+	HeapTest2();
 	return 0;
 }
