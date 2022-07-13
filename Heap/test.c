@@ -40,9 +40,30 @@ void HeapTest2()
 		printf("%d ", arr[i]);
 	}
 	//≈≈–Ú
-	HeapSort(arr, sz);
+	HeapSort(arr, sz, 1);
 	printf("\n");
 	for (int i = 0; i < sz; ++i)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
+void HeapTest3()
+{
+	srand(1145141919);
+
+	int sz = 10000;
+	int k = 100;
+	DataType* arr = (DataType*)malloc(sz * sizeof(DataType));
+	assert(arr);
+	for (int i = 0; i < sz; ++i)
+	{
+		arr[i] = rand() % 1000;
+	}
+	//TopK
+	SortTopK(arr, sz, k, 1);
+
+	for (int i = 0; i < k; ++i)
 	{
 		printf("%d ", arr[i]);
 	}
@@ -52,6 +73,7 @@ int main()
 {
 	int i = 0;
 	//HeapTest1();
-	HeapTest2();
+	//HeapTest2();
+	//HeapTest3();
 	return 0;
 }

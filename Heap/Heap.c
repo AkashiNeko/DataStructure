@@ -167,18 +167,74 @@ int HPSize(HP* php)
 	return php->size;
 } // HPSize
 
-void HeapSort(DataType* data, int size)
+void CustomAdjustDown(DataType* data, int size, int parent, int maxHeap)
+{
+	/*从根节点开始向下调整（可选择最大堆或最小堆）*/
+	int child = parent * 2 + 1;
+	while (child < size)
+	{
+		if (child + 1 < size && data[child + 1] != data[child])
+		{
+			//如果存在右子节点
+			if (maxHeap ^ (data[child + 1] < data[child]))
+			{
+				++child;
+			}
+		}
+		if (maxHeap ^ (data[child] < data[parent]))
+		{
+			//向下交换父子节点
+			Swap(&data[parent], &data[child]);
+			parent = child;
+			child = child * 2 + 1;
+		}
+		else
+		{
+			break;
+		}
+	}
+} // CustomAdjustDown
+
+void HeapSort(DataType* data, int size, int seq)
 {
 	/*堆排序*/
 	assert(data);
 	int i;
 	for (i = (size - 2) / 2; i >= 0; --i)
 	{
-		AdjustDown(data, size, i);
+		CustomAdjustDown(data, size, i, !seq);
 	}
 	while (size--)
 	{
 		Swap(data, data + size);
-		AdjustDown(data, size, 0);
+		CustomAdjustDown(data, size, 0, !seq);
 	}
 } // HeapSort
+
+void SortTopK(DataType* data, int size, int k, int seq)
+{
+	/*排序data数组中最大/小的k个元素*/
+	assert(data);
+	if (k <= 0) return;
+	if(k > size) k = size;
+	int i;
+	for (i = (k - 2) / 2; i >= 0; --i)
+	{
+		CustomAdjustDown(data, k, i, !seq);
+	}
+	for (i = k; i < size; ++i)
+	{
+		if (data[i] == data[0])
+			continue;
+		if (seq ^ (data[i] < data[0]))
+		{
+			Swap(data + i, data);
+			CustomAdjustDown(data, k, 0, !seq);
+		}
+	}
+	while (k--)
+	{
+		Swap(data, data + k);
+		CustomAdjustDown(data, k, 0, !seq);
+	}
+} // SortTopK

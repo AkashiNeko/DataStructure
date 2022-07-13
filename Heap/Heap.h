@@ -59,7 +59,13 @@ int HPEmpty(HP* php);
 //堆中元素个数
 int HPSize(HP* php);
 
-//堆排序
-void HeapSort(DataType* data, int size);
+//从根节点开始向下调整（maxHeap -> 0:最小堆, 1:最大堆）
+void CustomAdjustDown(DataType* data, int size, int parent, int maxHeap);
+
+//堆排序（seq -> 0:递增排序, 1:递减排序）
+void HeapSort(DataType* data, int size, int seq);
+
+//排序data数组中的k个元素（seq -> 0:最大的k个元素, 1:最小的k个元素）
+void SortTopK(DataType* data, int size, int k, int seq);
 
 #endif
