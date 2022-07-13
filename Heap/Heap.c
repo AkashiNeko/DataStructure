@@ -218,10 +218,12 @@ void SortTopK(DataType* data, int size, int k, int seq)
 	if (k <= 0) return;
 	if(k > size) k = size;
 	int i;
+	//前k个元素建堆
 	for (i = (k - 2) / 2; i >= 0; --i)
 	{
 		CustomAdjustDown(data, k, i, !seq);
 	}
+	//后n-k个元素比堆顶元素小/大则换入堆中
 	for (i = k; i < size; ++i)
 	{
 		if (data[i] == data[0])
@@ -232,6 +234,7 @@ void SortTopK(DataType* data, int size, int k, int seq)
 			CustomAdjustDown(data, k, 0, !seq);
 		}
 	}
+	//前k个元素依次出堆
 	while (k--)
 	{
 		Swap(data, data + k);
