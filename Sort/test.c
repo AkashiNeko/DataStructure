@@ -8,6 +8,7 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 #include "Sort.h"
+#include <stdio.h>
 #include <time.h>
 
 void SortTest(int* arr, int size, void (*sort)(int*, int))
@@ -37,7 +38,8 @@ int main()
 					//InsertionSort
 					//ShellSort
 					//SelectionSort
-	SortTest(arr, sz, SelectionSort);
+					//BubbleSort
+	SortTest(arr, sz, BubbleSort);
 
 	return 0;
 }

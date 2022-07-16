@@ -142,6 +142,7 @@
     <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BubbleSort.c" />
     <ClCompile Include="InsertionSort.c" />
     <ClCompile Include="SelectionSort.c" />
     <ClCompile Include="ShellSort.c" />
