@@ -17,4 +17,4 @@
 - 堆 - *[Heap](https://github.com/AkashiNeko/DataStructure/tree/main/Heap)*
 
 #### 排序
-- 排序 - *[Sort](https://github.com/AkashiNeko/DataStructure/tree/main/Sort)*
+- 排序 - *[Sort](https://github.com/AkashiNeko/DataStructure/blob/main/Sort)*
