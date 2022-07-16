@@ -23,7 +23,10 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="InsertionSort\InsertionSort.c">
+    <ClCompile Include="InsertionSort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellSort.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

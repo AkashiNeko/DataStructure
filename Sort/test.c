@@ -8,15 +8,11 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 #include "Sort.h"
+#include <time.h>
 
 void SortTest(int* arr, int size, void (*sort)(int*, int))
 {
 	int i = 0;
-	for (i = 0; i < size; ++i)
-	{
-		printf("%d ", arr[i] = rand() % 100);
-	}
-	printf("\n");
 	sort(arr, size);
 	for (i = 0; i < size; ++i)
 	{
@@ -29,11 +25,16 @@ int main()
 {
 	srand((unsigned int)time(NULL));
 
-	int i = 0;
 	int arr[20];
 	int sz = sizeof(arr) / sizeof(arr[0]);
 
+	for (int i = 0; i < sz; ++i)
+	{
+		printf("%d ", arr[i] = rand() % 100);
+	}
+	printf("\n");
 	SortTest(arr, sz, InsertionSort);
+	SortTest(arr, sz, ShellSort);
 
 	return 0;
 }
