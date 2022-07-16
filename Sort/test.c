@@ -1,6 +1,6 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
-//    date:   2022-7-15
+//    date:   2022-7-16
 //    author: Akashi
 //    github: https://github.com/AkashiNeko/DataStructure
 //    QQ:     1006554341
@@ -30,11 +30,14 @@ int main()
 
 	for (int i = 0; i < sz; ++i)
 	{
-		printf("%d ", arr[i] = rand() % 100);
+		printf("%d,", arr[i] = rand() % 100);
 	}
-	printf("\n");
-	SortTest(arr, sz, InsertionSort);
-	SortTest(arr, sz, ShellSort);
+	printf("\n\n");
+
+					//InsertionSort
+					//ShellSort
+					//SelectionSort
+	SortTest(arr, sz, SelectionSort);
 
 	return 0;
 }

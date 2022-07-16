@@ -12,9 +12,9 @@ void ShellSort(int* arr, int size)
 		for (i = gap; i < size; ++i)
 		{
 			int temp = arr[i];
-			for (j = i; j > gap - 1; j -= gap)
+			for (j = i; j >= gap; j -= gap)
 			{
-				if (temp < arr[j - gap])
+				if (temp SYM arr[j - gap])
 					arr[j] = arr[j - gap];
 				else
 					break;

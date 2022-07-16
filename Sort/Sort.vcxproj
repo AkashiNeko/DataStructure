@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InsertionSort.c" />
+    <ClCompile Include="SelectionSort.c" />
     <ClCompile Include="ShellSort.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>

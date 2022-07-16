@@ -7,14 +7,15 @@
 #include <stdlib.h>
 #include <assert.h>
 
-//½»»»
-#define Swap(a, b) (void)(a = (a) ^ (b), b = (a) ^ (b), a = (a) ^ (b))
-
 //ÅÅÐòË³Ðò
+// < Ë³Ðò
+// > ÄæÐò
 #define SYM <
 
 void InsertionSort(int* arr, int size);
 
 void ShellSort(int* arr, int size);
+
+void SelectionSort(int* arr, int size);
 
 #endif
