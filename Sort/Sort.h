@@ -13,9 +13,6 @@
 //ÅÅĞòË³Ğò
 #define SYM <
 
-//½»»»Ìõ¼ş
-//#define Compare(a, b) ((a) SYM (b)) && 
-
 void InsertionSort(int* arr, int size);
 
 #endif
