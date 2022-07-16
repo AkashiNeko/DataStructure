@@ -7,14 +7,18 @@ void InsertionSort(int* arr, int size)
 	int i, j;
 	for (i = 1; i < size; ++i)
 	{
+		if (arr[i - 1] SYM arr[i])
+			continue;
 		//ц©лкеепР
-		for (j = i - 1; i >= 0; --j)
+		int temp = arr[i];
+		for (j = i; j > 0; --j)
 		{
-			//╣╔лкеепР
-			if (arr[j + 1] SYM arr[j])
-				Swap(arr[j + 1], arr[j]);
+			//р╩лкеепР
+			if (temp SYM arr[j - 1])
+				arr[j] = arr[j - 1];
 			else
 				break;
 		}
+		arr[j] = temp;
 	}
 }
