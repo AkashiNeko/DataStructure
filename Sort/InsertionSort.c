@@ -2,6 +2,7 @@
 
 void InsertionSort(int* arr, int size)
 {
+	/*≤Â»Î≈≈–Ú*/
 	if (size <= 1)
 		return;
 	int i, j;
@@ -21,4 +22,4 @@ void InsertionSort(int* arr, int size)
 		}
 		arr[j] = temp;
 	}
-}
+} // InsertionSort
