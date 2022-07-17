@@ -43,6 +43,8 @@ void BinaryTreeTest()
 	printf("Preorder : ");
 	BTPreorder(root);
 	printf("\n");
+
+	BTDestory(root);
 }
 
 int main()
