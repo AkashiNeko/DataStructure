@@ -15,7 +15,7 @@ void SelectionSort(int* arr, int size)
 	for (i = 0; i < size - 1; ++i)
 	{
 		int index = i;
-		for (j = i; j < size; ++j)
+		for (j = i + 1; j < size; ++j)
 		{
 			if (arr[j] SYM arr[index])
 				index = j;
