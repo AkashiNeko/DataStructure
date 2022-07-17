@@ -14,6 +14,7 @@
 - 循环队列 - *[Circular Queue](https://github.com/AkashiNeko/DataStructure/tree/main/Circular_Queue)*
 
 #### 二叉树和堆
+- 二叉树 - *[Binary Tree](https://github.com/AkashiNeko/DataStructure/tree/main/Binary_Tree)*
 - 堆 - *[Heap](https://github.com/AkashiNeko/DataStructure/tree/main/Heap)*
 
 #### 排序
