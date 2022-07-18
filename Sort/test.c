@@ -17,7 +17,7 @@ void SortTest(int* arr, int size, void (*sort)(int*, int))
 	sort(arr, size);
 	for (i = 0; i < size; ++i)
 	{
-		printf("%d ", arr[i]);
+		printf("%2d ", arr[i]);
 	}
 	printf("\n");
 }
@@ -26,12 +26,16 @@ int main()
 {
 	srand((unsigned int)time(NULL));
 
-	int arr[20];
+	int arr[25];
 	int sz = sizeof(arr) / sizeof(arr[0]);
 
 	for (int i = 0; i < sz; ++i)
 	{
-		printf("%d,", arr[i] = rand() % 100);
+		arr[i] = rand() % 100;
+	}
+	for (int i = 0; i < sz; ++i)
+	{
+		printf("%2d ", arr[i]);
 	}
 	printf("\n\n");
 
@@ -39,7 +43,7 @@ int main()
 					//ShellSort
 					//SelectionSort
 					//BubbleSort
-	SortTest(arr, sz, BubbleSort);
+	SortTest(arr, sz, QuickSort);
 
 	return 0;
 }

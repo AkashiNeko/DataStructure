@@ -19,4 +19,6 @@ void SelectionSort(int* arr, int size);
 
 void BubbleSort(int* arr, int size);
 
+void QuickSort(int* arr, int size);
+
 #endif

@@ -3,6 +3,8 @@
 void SEL_Swap(int* p1, int* p2)
 {
 	/*½»»»*/
+	if (p1 == p2)
+		return;
 	int temp = *p1;
 	*p1 = *p2;
 	*p2 = temp;
