@@ -11,39 +11,41 @@
 #include <stdio.h>
 #include <time.h>
 
-void SortTest(int* arr, int size, void (*sort)(int*, int))
+void Sort(int* arr, int size, void (*sort)(int*, int))
 {
-	int i = 0;
 	sort(arr, size);
-	for (i = 0; i < size; ++i)
-	{
-		printf("%2d ", arr[i]);
-	}
-	printf("\n");
 }
 
 int main()
 {
 	srand((unsigned int)time(NULL));
 
-	int arr[25];
-	int sz = sizeof(arr) / sizeof(arr[0]);
-
+	int sz = 1000000;
+	int* arr = (int*)malloc(sz * sizeof(int));
+	assert(arr);
+	
 	for (int i = 0; i < sz; ++i)
 	{
-		arr[i] = rand() % 100;
+		arr[i] = rand();
+		//arr[i] = 1;
 	}
-	for (int i = 0; i < sz; ++i)
+
+	/*for (int i = 0; i < sz; ++i)
 	{
 		printf("%2d ", arr[i]);
-	}
-	printf("\n\n");
+	}*/
+	//printf("\n\n");
 
-					//InsertionSort
-					//ShellSort
-					//SelectionSort
-					//BubbleSort
-	SortTest(arr, sz, QuickSort);
+	//InsertionSort
+	//ShellSort
+	//SelectionSort
+	//BubbleSort
+	//QuickSort
+
+	int start = clock();
+	Sort(arr, sz, QuickSort);
+	int end = clock();
+	printf("clock: %d", end - start);
 
 	return 0;
 }
