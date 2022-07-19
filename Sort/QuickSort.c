@@ -10,7 +10,7 @@ void QUI_Swap(int* p1, int* p2)
 
 int MidIndex(int* arr, int size)
 {
-	//三数取中
+	/*三数取中作为基准*/
 	int left = 0;
 	int right = size - 1;
 	int mid = (left + right) / 2;
@@ -32,7 +32,7 @@ int MidIndex(int* arr, int size)
 
 int PartSort(int* arr, int size)
 {
-	//三数取中作为基准
+	/*前后指针*/
 	int key = MidIndex(arr, size);
 	QUI_Swap(&arr[0], &arr[key]);
 
@@ -54,19 +54,18 @@ int PartSort(int* arr, int size)
 
 void QuickSort(int* arr, int size)
 {
+	/*快速排序*/
 	if (size < 10)
 	{
 		//区间较小时
 		InsertionSort(arr, size);
 		return;
 	}
-
 	int key = PartSort(arr, size);
 
 	//数组元素全部相同
-	//if (arr[0] == arr[size - 1])
-	//	return;
-
+	if (arr[0] == arr[size - 1])
+		return;
 	//对prev左边的元素排序
 	QuickSort(arr, key);
 	//对prev右边的元素排序

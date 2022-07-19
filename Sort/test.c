@@ -11,9 +11,25 @@
 #include <stdio.h>
 #include <time.h>
 
+#define SORT(function)      \
+int start = clock();        \
+Sort(arr, sz, function);    \
+int end = clock();          \
+printf(#function" clock: %d\n\n", end - start)
+
 void Sort(int* arr, int size, void (*sort)(int*, int))
 {
 	sort(arr, size);
+}
+
+void PrintArr(int* arr, int size)
+{
+	int i;
+	for (i = 0; i < size; ++i)
+	{
+		printf("%2d ", arr[i]);
+	}
+	printf("\n\n");
 }
 
 int main()
@@ -30,22 +46,18 @@ int main()
 		//arr[i] = 1;
 	}
 
-	/*for (int i = 0; i < sz; ++i)
-	{
-		printf("%2d ", arr[i]);
-	}*/
-	//printf("\n\n");
+	//PrintArr(arr, sz);
 
 	//InsertionSort
 	//ShellSort
 	//SelectionSort
+	//HeapSort
 	//BubbleSort
 	//QuickSort
 
-	int start = clock();
-	Sort(arr, sz, QuickSort);
-	int end = clock();
-	printf("clock: %d", end - start);
+	SORT(ShellSort);
+	
+	//PrintArr(arr, sz);
 
 	return 0;
 }
