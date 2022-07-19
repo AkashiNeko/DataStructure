@@ -5,6 +5,7 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 //≈≈–ÚÀ≥–Ú
 // < À≥–Ú
@@ -22,5 +23,7 @@ void HeapSort(int* arr, int size);
 void BubbleSort(int* arr, int size);
 
 void QuickSort(int* arr, int size);
+
+void MergeSort(int* arr, int size);
 
 #endif

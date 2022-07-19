@@ -30,7 +30,7 @@ int MidIndex(int* arr, int size)
 			return left;
 } // MidIndex
 
-int PartSort(int* arr, int size)
+int PartQuickSort(int* arr, int size)
 {
 	/*前后指针*/
 	int key = MidIndex(arr, size);
@@ -61,7 +61,7 @@ void QuickSort(int* arr, int size)
 		InsertionSort(arr, size);
 		return;
 	}
-	int key = PartSort(arr, size);
+	int key = PartQuickSort(arr, size);
 
 	//数组元素全部相同
 	if (arr[0] == arr[size - 1])
