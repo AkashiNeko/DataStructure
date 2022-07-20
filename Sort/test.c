@@ -48,18 +48,20 @@ int main()
 
 	//PrintArr(arr, sz);
 
-	//InsertionSort
-	//ShellSort
-	//SelectionSort
-	//HeapSort
-	//BubbleSort
-	//QuickSort
-	//MergeSort
-	//CountSort
+	//≤Â»Î≈≈–Ú	InsertionSort
+	//œ£∂˚≈≈–Ú	ShellSort
+	//—°‘Ò≈≈–Ú	SelectionSort
+	//∂—≈≈–Ú  	HeapSort
+	//√∞≈›≈≈–Ú	BubbleSort
+	//øÏÀŸ≈≈–Ú	QuickSort
+	//πÈ≤¢≈≈–Ú	MergeSort
+	//º∆ ˝≈≈–Ú	CountSort
 
 	SORT(QuickSort);
 	
 	//PrintArr(arr, sz);
+
+	free(arr);
 
 	return 0;
 }
