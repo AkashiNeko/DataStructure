@@ -45,7 +45,8 @@ void PartMergeSort(int* arr, int size, int* tmp)
 		}
 		else
 		{
-			tmp[cur++] = arr[left] SYM arr[right] ? arr[left++] : arr[right++];
+			//当 arr[left] == arr[right] 时，先入left，保持排序稳定
+			tmp[cur++] = !(arr[right] SYM arr[left]) ? arr[left++] : arr[right++];
 		}
 	}
 
