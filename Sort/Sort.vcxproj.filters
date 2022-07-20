@@ -44,5 +44,8 @@
     <ClCompile Include="MergeSort.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CountSort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

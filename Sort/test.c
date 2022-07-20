@@ -55,8 +55,9 @@ int main()
 	//BubbleSort
 	//QuickSort
 	//MergeSort
+	//CountSort
 
-	SORT(MergeSort);
+	SORT(QuickSort);
 	
 	//PrintArr(arr, sz);
 

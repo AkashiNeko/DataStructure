@@ -26,4 +26,6 @@ void QuickSort(int* arr, int size);
 
 void MergeSort(int* arr, int size);
 
+void CountSort(int* arr, int size);
+
 #endif
