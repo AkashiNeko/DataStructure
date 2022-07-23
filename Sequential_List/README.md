@@ -1,9 +1,9 @@
-# Ë³Ğò±í
+# é¡ºåºè¡¨
 ## [Sequential List](https://github.com/AkashiNeko/DataStructure/tree/main/Sequential_List)
 
-?Ë³Ğò±í½Ó¿Ú£¨CÓïÑÔÊµÏÖ£©
+âœ¨é¡ºåºè¡¨æ¥å£ï¼ˆCè¯­è¨€å®ç°ï¼‰
 
-### Ë³Ğò±í½á¹¹
+### é¡ºåºè¡¨ç»“æ„
 ~~~c
 typedef struct SeqList
 {
@@ -13,24 +13,24 @@ typedef struct SeqList
 }SL, * pSL;
 ~~~
 
-###### ³õÊ¼»¯ºÍÏú»Ù
+###### åˆå§‹åŒ–å’Œé”€æ¯
 ~~~c
 void SLInit(pSL ps);
 void SLDestory(pSL ps);
 ~~~
 
-###### ±éÀú´òÓ¡
+###### éå†æ‰“å°
 ~~~c
 void SLPrint(const pSL ps);
 ~~~
 
-###### Í·²å¡¢Î²²å
+###### å¤´æ’ã€å°¾æ’
 ~~~c
 void SLPushFront(pSL ps, int new);
 void SLPushBack(pSL ps, int new);
 ~~~
 
-###### Í·É¾¡¢Î²É¾
+###### å¤´åˆ ã€å°¾åˆ 
 ~~~c
 void SLPopFront(pSL ps);
 void SLPopBack(pSL ps);
