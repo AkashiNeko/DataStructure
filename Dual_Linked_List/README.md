@@ -13,9 +13,10 @@ typedef struct DLinkList
 }DL, * pDL;
 ~~~
 
-###### 初始化头节点（哨兵位）
+###### 初始化和销毁
 ~~~c
 pDL DLInit();
+void DLDestroy(pDL phead);
 ~~~
 
 ###### 遍历打印
@@ -44,9 +45,4 @@ pDL DLFindNode(pDL phead, DataType data);
 ~~~c
 void DLInsert(pDL pos, DataType data);
 void DLErase(pDL pos);
-~~~
-
-###### 链表的销毁
-~~~c
-void DLDestroy(pDL phead);
 ~~~
