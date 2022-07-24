@@ -7,9 +7,9 @@
 ~~~c
 typedef struct DLinkList
 {
-	struct DLinkList* next;
-	struct DLinkList* prev;
-	DataType data;
+    struct DLinkList* next;
+    struct DLinkList* prev;
+    DataType data;
 }DL, * pDL;
 ~~~
 
