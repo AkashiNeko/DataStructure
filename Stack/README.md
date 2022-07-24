@@ -3,7 +3,7 @@
 
 ✨栈接口（C语言实现）
 
-### 双链表节点结构
+### 栈的结构
 ~~~c
 typedef struct Stact
 {
